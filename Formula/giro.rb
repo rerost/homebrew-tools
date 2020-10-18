@@ -2,16 +2,16 @@
 class Giro < Formula
   desc ""
   homepage "https://github.com/rerost/giro"
-  version "0.0.3"
+  version "0.0.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/rerost/giro/releases/download/v0.0.3/giro_0.0.3_Darwin_x86_64.tar.gz"
-    sha256 "241c22052735fde5a3f960d6d8ba14dc1c7ecaa249e20d870e170d86a45eb0bc"
+    url "https://github.com/rerost/giro/releases/download/v0.0.4/giro_0.0.4_Darwin_x86_64.tar.gz"
+    sha256 "7747ba975e1c23ab4127494fdba6bae5617d0d229f18031e73577227e90c09b4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/rerost/giro/releases/download/v0.0.3/giro_0.0.3_Linux_x86_64.tar.gz"
-      sha256 "9861b0f47cf626725b5b656421142014ce1ca14cab7d81cc2f2df232d850fcb2"
+      url "https://github.com/rerost/giro/releases/download/v0.0.4/giro_0.0.4_Linux_x86_64.tar.gz"
+      sha256 "1b7bb49971711ff2efa6ca64fa0e36c5d7ee463d8f0c957549ce013da2436918"
     end
   end
 
