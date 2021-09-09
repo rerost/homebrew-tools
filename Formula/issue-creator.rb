@@ -5,24 +5,24 @@
 class IssueCreator < Formula
   desc ""
   homepage "https://github.com/rerost/issue-creator"
-  version "0.1.15"
+  version "0.1.16"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rerost/issue-creator/releases/download/v0.1.15/issue-creator_0.1.15_Darwin_x86_64.tar.gz"
-      sha256 "6438a1b6198490954bea5b924bf647bd034a6c34e362dcb0fe3b1c5ecde45c3c"
+      url "https://github.com/rerost/issue-creator/releases/download/v0.1.16/issue-creator_0.1.16_Darwin_x86_64.tar.gz"
+      sha256 "8121ed93ad27c67084714f07107327c783aaa51a5739ed86cc734a55469b176d"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/rerost/issue-creator/releases/download/v0.1.15/issue-creator_0.1.15_Linux_x86_64.tar.gz"
-      sha256 "5f8fa903211c1d4cfe98db826d54087f3da601af35027e7fcbfeba106ac57949"
+      url "https://github.com/rerost/issue-creator/releases/download/v0.1.16/issue-creator_0.1.16_Linux_x86_64.tar.gz"
+      sha256 "344c242b6c84a45c6017e20a8e6ba21a7194a5d42541879b1815b65c7c2fcf71"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rerost/issue-creator/releases/download/v0.1.15/issue-creator_0.1.15_Linux_arm64.tar.gz"
-      sha256 "3dd96db3cc564472805334f5c79a18255ae747b2242e3f34ece1924cc5bc755c"
+      url "https://github.com/rerost/issue-creator/releases/download/v0.1.16/issue-creator_0.1.16_Linux_arm64.tar.gz"
+      sha256 "11abf386c5f0e18e4eeb45562c51d2277f7a7cea83a11fe9c9b4a79f96b88d5b"
     end
   end
 
