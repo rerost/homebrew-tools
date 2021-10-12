@@ -5,24 +5,32 @@
 class Giro < Formula
   desc ""
   homepage "https://github.com/rerost/giro"
-  version "0.0.13"
+  version "0.0.14"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/rerost/giro/releases/download/v0.0.13/giro_0.0.13_Darwin_x86_64.tar.gz"
-    sha256 "2d0a504d9abde8fa75fe9498633bf56da79c668cb59caf21cbaad61b5c42a2ff"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/rerost/giro/releases/download/v0.0.14/giro_0.0.14_Darwin_arm64.tar.gz"
+      sha256 "7f8052348c9d8236b2d390142fdc4e24e7f7cce26f924df6760f4b33d7a97193"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/rerost/giro/releases/download/v0.0.14/giro_0.0.14_Darwin_x86_64.tar.gz"
+      sha256 "ce31fa71dbf51d3358af9faa05c63503050a01f997f5f54281aa33e56bbe4d5a"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/rerost/giro/releases/download/v0.0.13/giro_0.0.13_Linux_x86_64.tar.gz"
-    sha256 "bf7aacdd244fe89867aa66c3b826fce5244732f5971898c251ad39812e4205fc"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/rerost/giro/releases/download/v0.0.13/giro_0.0.13_Linux_arm64.tar.gz"
-    sha256 "6b1bc2be2a47b40990eacab2407f2e06843f3c7ae369b7f58a0e1a68d6a36e23"
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rerost/giro/releases/download/v0.0.14/giro_0.0.14_Linux_arm64.tar.gz"
+      sha256 "ddb88ac2911d557d021279612a04c709efc92d678d28df91c000fdf329960887"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/rerost/giro/releases/download/v0.0.14/giro_0.0.14_Linux_x86_64.tar.gz"
+      sha256 "37672ce100557d1a7f65a79c47904d54f871bf471c5ec36b756372af9f215f92"
+    end
   end
 
   def install
     bin.install "giro"
-    bin.install "protoc-gen-reflection-server"
   end
 end
