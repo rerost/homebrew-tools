@@ -5,20 +5,29 @@
 class Dagg < Formula
   desc ""
   homepage "https://github.com/rerost/dagg"
-  version "0.2.1"
+  version "0.2.2"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/rerost/dagg/releases/download/v0.2.1/dagg_0.2.1_Darwin_x86_64.tar.gz"
-    sha256 "568f84905ca2df9e00321222ed29a0188e26f2244713cf603d595f8862efc32b"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/rerost/dagg/releases/download/v0.2.2/dagg_0.2.2_Darwin_arm64.tar.gz"
+      sha256 "9434929fc11de44363803df14f5264afa2391623795262bc53cbefaec3c1306e"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/rerost/dagg/releases/download/v0.2.2/dagg_0.2.2_Darwin_x86_64.tar.gz"
+      sha256 "bd411743f65b1fbab2f318fb093c2ade62005fc4a24d0d601989744b9b5ae27d"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/rerost/dagg/releases/download/v0.2.1/dagg_0.2.1_Linux_x86_64.tar.gz"
-    sha256 "b444a292709583747a9a3addb4ed0a57f62bfda86f08526875c71ecd1a75e6a7"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/rerost/dagg/releases/download/v0.2.1/dagg_0.2.1_Linux_arm64.tar.gz"
-    sha256 "fba063054bdd94eb77d73f8320d4a7a9cbb94de2c45b7ec7ae733dc4aab671e8"
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/rerost/dagg/releases/download/v0.2.2/dagg_0.2.2_Linux_arm64.tar.gz"
+      sha256 "14a0be77e48feff8c5e6fefc757e6246edac10257fd13a9edfeb90277ddc3e19"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/rerost/dagg/releases/download/v0.2.2/dagg_0.2.2_Linux_x86_64.tar.gz"
+      sha256 "f6f980e9930994768fd10d5c80276a481102c6458ebf986dbf80677f3a723688"
+    end
   end
 
   def install
