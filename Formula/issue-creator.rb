@@ -10,7 +10,7 @@ class IssueCreator < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/rerost/issue-creator/releases/download/v0.3.0/issue-creator_Darwin_x86_64.tar.gz"
-      sha256 "2942f98dab56dd8d4860cf7a8529f4ec80c7623bdab22279e7a7489b4921db6b"
+      sha256 "db0b8a9e8e7aa147aca55f54beb12452600618bf5bf9e0d5727a337b277e910f"
 
       def install
         bin.install "issue-creator"
@@ -18,7 +18,7 @@ class IssueCreator < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/rerost/issue-creator/releases/download/v0.3.0/issue-creator_Darwin_arm64.tar.gz"
-      sha256 "089e5ee5968cef2078f8d90f3d889d45b1a64dd7571cf010daa7da8daa02ae9f"
+      sha256 "54490e61cb3e573ad0a4cf7387c1e6e420995cd8fc5d3259c8fbdb5e78d8ce71"
 
       def install
         bin.install "issue-creator"
@@ -29,7 +29,7 @@ class IssueCreator < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/rerost/issue-creator/releases/download/v0.3.0/issue-creator_Linux_x86_64.tar.gz"
-      sha256 "57a8e2b9ba3a56e66c1d975be0edf689bff84ec52161ec13e5c2753b0efc1a2a"
+      sha256 "b92bd789c25fb842e02dd9143a7bc91442aaaee719abcc473bc5c8a63bb71122"
 
       def install
         bin.install "issue-creator"
@@ -37,7 +37,7 @@ class IssueCreator < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/rerost/issue-creator/releases/download/v0.3.0/issue-creator_Linux_arm64.tar.gz"
-      sha256 "75746c0b7bcdbbc21f9093750800e364940ecfbee4ebdecd9900259b99458ce7"
+      sha256 "da6803f78be7342a3cf970b9c5cacfb1c17607a4e1e0014604b90a7d26c60b35"
 
       def install
         bin.install "issue-creator"
