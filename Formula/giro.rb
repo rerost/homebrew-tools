@@ -5,21 +5,21 @@
 class Giro < Formula
   desc ""
   homepage "https://github.com/rerost/giro"
-  version "0.0.15"
+  version "0.0.19"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/rerost/giro/releases/download/v0.0.15/giro_0.0.15_Darwin_x86_64.tar.gz"
-      sha256 "cdbca647feb44007eee3fd621afde1906bdd38a14942b0598592070a18a58833"
+    on_intel do
+      url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Darwin_x86_64.tar.gz"
+      sha256 "f7186567772f2eca35b68904a10e8c57f9e0719c5755274df811b4c0cd234efc"
 
       def install
         bin.install "giro"
         bin.install "protoc-gen-reflection-server"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/rerost/giro/releases/download/v0.0.15/giro_0.0.15_Darwin_arm64.tar.gz"
-      sha256 "0b1dd7231361dae7f971da546cec151aa0b9ae766aa0861807fa20a0401397dc"
+    on_arm do
+      url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Darwin_arm64.tar.gz"
+      sha256 "18ef9e5456f3e215b2b8de9f73bda151d3dbc17ddcdab139d2e688ced6eff5d1"
 
       def install
         bin.install "giro"
@@ -29,22 +29,26 @@ class Giro < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/rerost/giro/releases/download/v0.0.15/giro_0.0.15_Linux_x86_64.tar.gz"
-      sha256 "0582cae56fe8cf3e5a2132b46d6f3f943e1f704eefc4f7c67a67f80b139f6690"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Linux_x86_64.tar.gz"
+        sha256 "8c6b5b6dbfd6f95d5983f97b972a2a2a49252e7c6a25a1c425d081ce5e9edc29"
 
-      def install
-        bin.install "giro"
-        bin.install "protoc-gen-reflection-server"
+        def install
+          bin.install "giro"
+          bin.install "protoc-gen-reflection-server"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rerost/giro/releases/download/v0.0.15/giro_0.0.15_Linux_arm64.tar.gz"
-      sha256 "80d4f8a553e49b06b28948c5c91cbb186e3eac565f06e23aa156234e79c235f2"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Linux_arm64.tar.gz"
+        sha256 "f931ccc8ca34adb87defeca0b274b27f2e073859351bf3a669472ac3af519c15"
 
-      def install
-        bin.install "giro"
-        bin.install "protoc-gen-reflection-server"
+        def install
+          bin.install "giro"
+          bin.install "protoc-gen-reflection-server"
+        end
       end
     end
   end
