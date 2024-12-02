@@ -5,20 +5,20 @@
 class Discocat < Formula
   desc ""
   homepage "https://github.com/rerost/discocat"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_intel do
-      url "https://github.com/rerost/discocat/releases/download/v0.1.1/discocat_Darwin_x86_64.tar.gz"
-      sha256 "6a36e237b977cc702d986541def77efdaea6c76a90a2d74eddd5f31d740c43fc"
+      url "https://github.com/rerost/discocat/releases/download/v0.1.2/discocat_Darwin_x86_64.tar.gz"
+      sha256 "9f93fed62c03a4ba4150e1fbd9110b833e1b7f0038ddf1bffcea6cbd8899e67f"
 
       def install
         bin.install "discocat"
       end
     end
     on_arm do
-      url "https://github.com/rerost/discocat/releases/download/v0.1.1/discocat_Darwin_arm64.tar.gz"
-      sha256 "226cf5ab4981c2af3ffe9343c124eeb656a895b39b409ad5bf48cfa172602af0"
+      url "https://github.com/rerost/discocat/releases/download/v0.1.2/discocat_Darwin_arm64.tar.gz"
+      sha256 "45a4c574163c188ff6f84c85e1fa99757bf3b9cc61f9a2f0ca64b5a27d283207"
 
       def install
         bin.install "discocat"
@@ -29,8 +29,8 @@ class Discocat < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/discocat/releases/download/v0.1.1/discocat_Linux_x86_64.tar.gz"
-        sha256 "fd3f8512facb75211bcc15f71ca74a84ea773fdf3be828c4501c7dea1e41ca22"
+        url "https://github.com/rerost/discocat/releases/download/v0.1.2/discocat_Linux_x86_64.tar.gz"
+        sha256 "39033472205487d132c96773786a1dea7aad24ef9410cb975b8cce117240c155"
 
         def install
           bin.install "discocat"
@@ -39,8 +39,8 @@ class Discocat < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/discocat/releases/download/v0.1.1/discocat_Linux_arm64.tar.gz"
-        sha256 "65f2b2ece57d872498f934eb20eb27618bdf7ee13c373103ba75b52533acb18c"
+        url "https://github.com/rerost/discocat/releases/download/v0.1.2/discocat_Linux_arm64.tar.gz"
+        sha256 "9eeb0fdc8be1b099bb2848446ad7f96ee65e7bbeeb828f1e0c5eacf46891fb2a"
 
         def install
           bin.install "discocat"
