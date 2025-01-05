@@ -5,20 +5,20 @@
 class Shellm < Formula
   desc ""
   homepage "https://github.com/rerost/shellm"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rerost/shellm/releases/download/v0.1.0/shellm_Darwin_x86_64.tar.gz"
-      sha256 "a52311d9aebdecc79399c5b7889fc858e0432ef1b8651887e6d33b77ae191a2e"
+      url "https://github.com/rerost/shellm/releases/download/v0.1.1/shellm_Darwin_x86_64.tar.gz"
+      sha256 "5c9ab907b00241411a382678f4f4bfc47e70a9cb7d4113b367db04ae770b8afb"
 
       def install
         bin.install "shellm"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rerost/shellm/releases/download/v0.1.0/shellm_Darwin_arm64.tar.gz"
-      sha256 "2462a613cda407ee818d377e0d0879bfaa46b2646d0679eaefcf1b7582ef6413"
+      url "https://github.com/rerost/shellm/releases/download/v0.1.1/shellm_Darwin_arm64.tar.gz"
+      sha256 "bff7502c469a808374f4e1309c83b6ebd1d90cd85f57599f4a1ae47575eb4de7"
 
       def install
         bin.install "shellm"
@@ -29,8 +29,8 @@ class Shellm < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/shellm/releases/download/v0.1.0/shellm_Linux_x86_64.tar.gz"
-        sha256 "3a397d6258b3bb75fc8de54df65817d606410b89f5c6f37f25eca1cbd1d1f882"
+        url "https://github.com/rerost/shellm/releases/download/v0.1.1/shellm_Linux_x86_64.tar.gz"
+        sha256 "ca6be179b6cf314c953abe7168d7ea7ceb05a11d65d1096b6ab2ddb2db5fad91"
 
         def install
           bin.install "shellm"
@@ -39,8 +39,8 @@ class Shellm < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/shellm/releases/download/v0.1.0/shellm_Linux_arm64.tar.gz"
-        sha256 "bbc08474c8a5ace5bd3df14835700e97a8619e8d0447c3c9a7bcf4622665370f"
+        url "https://github.com/rerost/shellm/releases/download/v0.1.1/shellm_Linux_arm64.tar.gz"
+        sha256 "cc0f811253134eeb40853e3c757cf48ad8804b989921d4875227dc32cfed1305"
 
         def install
           bin.install "shellm"
