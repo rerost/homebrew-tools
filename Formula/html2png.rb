@@ -5,20 +5,20 @@
 class Html2png < Formula
   desc ""
   homepage "https://github.com/rerost/html2png"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
-    on_intel do
-      url "https://github.com/rerost/html2png/releases/download/v0.1.0/html2png_Darwin_x86_64.tar.gz"
-      sha256 "fc5f7ed88a78956409615671001d2a5689852bf6b75f2ed9e044fb1f2bfca8f7"
+    if Hardware::CPU.intel?
+      url "https://github.com/rerost/html2png/releases/download/v0.1.1/html2png_Darwin_x86_64.tar.gz"
+      sha256 "370b308c49fe1a99d94e25f0022f32705b82b68fe80f8ecadb6ec9600dbf095d"
 
       def install
         bin.install "html2png"
       end
     end
-    on_arm do
-      url "https://github.com/rerost/html2png/releases/download/v0.1.0/html2png_Darwin_arm64.tar.gz"
-      sha256 "12673b41f4dbdb1fb41b1b36a9c6c47ae0ae95757cfc0036bb2f70effc7a12a9"
+    if Hardware::CPU.arm?
+      url "https://github.com/rerost/html2png/releases/download/v0.1.1/html2png_Darwin_arm64.tar.gz"
+      sha256 "3db709834723ecd78da78339bad5c4f968490abae19025f1f00a6059fb24a268"
 
       def install
         bin.install "html2png"
@@ -27,20 +27,20 @@ class Html2png < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/html2png/releases/download/v0.1.0/html2png_Linux_x86_64.tar.gz"
-        sha256 "a1096bede202dbcb95d7d681a1ad2620c48b822eb0e27726057a71f4cbd42ab3"
+        url "https://github.com/rerost/html2png/releases/download/v0.1.1/html2png_Linux_x86_64.tar.gz"
+        sha256 "8de606ad4023377c3228e7ad52ff7c4076b6c2cc60b7340654130affe472e91a"
 
         def install
           bin.install "html2png"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/html2png/releases/download/v0.1.0/html2png_Linux_arm64.tar.gz"
-        sha256 "04b3a72d610e7bacd115d7a945d139fc16f832e6e4b6726f95494d90181c30a2"
+        url "https://github.com/rerost/html2png/releases/download/v0.1.1/html2png_Linux_arm64.tar.gz"
+        sha256 "b64fc0cb1d25328bd62d03b1a3c84a0f6b951d6cc6c8553fe4025948a0bb0ec1"
 
         def install
           bin.install "html2png"
