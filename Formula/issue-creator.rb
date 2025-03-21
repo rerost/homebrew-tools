@@ -5,20 +5,20 @@
 class IssueCreator < Formula
   desc ""
   homepage "https://github.com/rerost/issue-creator"
-  version "0.4.3"
+  version "0.4.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rerost/issue-creator/releases/download/v0.4.3/issue-creator_Darwin_x86_64.tar.gz"
-      sha256 "84e26c91b3a477aead29552b53cf1229de738c3d2826efea48e955be0d746e1c"
+      url "https://github.com/rerost/issue-creator/releases/download/v0.4.4/issue-creator_Darwin_x86_64.tar.gz"
+      sha256 "78c22eb4e18a234cb9e8de192bce217bdbe581d917d8e990f255121429fddca4"
 
       def install
         bin.install "issue-creator"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rerost/issue-creator/releases/download/v0.4.3/issue-creator_Darwin_arm64.tar.gz"
-      sha256 "dc66a6f3114fe3a1f2066f857f79a8290990608d71d06407e3c36bd9b3ab3577"
+      url "https://github.com/rerost/issue-creator/releases/download/v0.4.4/issue-creator_Darwin_arm64.tar.gz"
+      sha256 "396b6f1aa13b4edec3c86049210239540b2b2086d5f445f3d744788c2276b633"
 
       def install
         bin.install "issue-creator"
@@ -29,8 +29,8 @@ class IssueCreator < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/issue-creator/releases/download/v0.4.3/issue-creator_Linux_x86_64.tar.gz"
-        sha256 "670d4abbc36b848c300b320c9f105b0a0b6a299b6b041b2254fe896404cdb3af"
+        url "https://github.com/rerost/issue-creator/releases/download/v0.4.4/issue-creator_Linux_x86_64.tar.gz"
+        sha256 "2b3cf88a81bf7fef79365290871597408f87ace1b2ea005cc51c8b67e2ae9790"
 
         def install
           bin.install "issue-creator"
@@ -39,8 +39,8 @@ class IssueCreator < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/issue-creator/releases/download/v0.4.3/issue-creator_Linux_arm64.tar.gz"
-        sha256 "c5679591eee971dcece3aa27a325e2653620ca1ab5103b0f329ac1a4f49d120e"
+        url "https://github.com/rerost/issue-creator/releases/download/v0.4.4/issue-creator_Linux_arm64.tar.gz"
+        sha256 "4c2e94c63fc7ad20304d797ce7eb57892f8eb5a20d85741e7cfef4eb61d56dd3"
 
         def install
           bin.install "issue-creator"
