@@ -5,21 +5,21 @@
 class Giro < Formula
   desc ""
   homepage "https://github.com/rerost/giro"
-  version "0.0.19"
+  version "0.0.20"
 
   on_macos do
-    on_intel do
-      url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Darwin_x86_64.tar.gz"
-      sha256 "f7186567772f2eca35b68904a10e8c57f9e0719c5755274df811b4c0cd234efc"
+    if Hardware::CPU.intel?
+      url "https://github.com/rerost/giro/releases/download/v0.0.20/giro_Darwin_x86_64.tar.gz"
+      sha256 "60c309e2b0868f8a73e7b2460ea098ab276da59ae1f29f1e86fcf4bee2d2bacc"
 
       def install
         bin.install "giro"
         bin.install "protoc-gen-reflection-server"
       end
     end
-    on_arm do
-      url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Darwin_arm64.tar.gz"
-      sha256 "18ef9e5456f3e215b2b8de9f73bda151d3dbc17ddcdab139d2e688ced6eff5d1"
+    if Hardware::CPU.arm?
+      url "https://github.com/rerost/giro/releases/download/v0.0.20/giro_Darwin_arm64.tar.gz"
+      sha256 "72eb856b154eec83fb02d093c7c0463a0b2047d64da602bb557cd3799b181390"
 
       def install
         bin.install "giro"
@@ -29,10 +29,10 @@ class Giro < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Linux_x86_64.tar.gz"
-        sha256 "8c6b5b6dbfd6f95d5983f97b972a2a2a49252e7c6a25a1c425d081ce5e9edc29"
+        url "https://github.com/rerost/giro/releases/download/v0.0.20/giro_Linux_x86_64.tar.gz"
+        sha256 "8ac70c581795d32c644def974611418db4ee5d47e7091eb5f7a984e4c4726e83"
 
         def install
           bin.install "giro"
@@ -40,10 +40,10 @@ class Giro < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rerost/giro/releases/download/v0.0.19/giro_Linux_arm64.tar.gz"
-        sha256 "f931ccc8ca34adb87defeca0b274b27f2e073859351bf3a669472ac3af519c15"
+        url "https://github.com/rerost/giro/releases/download/v0.0.20/giro_Linux_arm64.tar.gz"
+        sha256 "cf32a5e355552a2cd4e5156392e572e2d6f152c53378a33c67a2211ec5e0e5eb"
 
         def install
           bin.install "giro"
